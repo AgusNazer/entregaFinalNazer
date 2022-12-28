@@ -32,6 +32,8 @@ export const CartContextProvider = ({children}) => {
                     }
                 ])
             }else{
+                // Probar en la siguiente linea el '!==' por '===' para poder
+                //  agregar un mismo producto dos o mas veces.
                 const filteredItem = cart.filter(i => i.id !== item.id)
                 setCart([
                     ...filteredItem,
