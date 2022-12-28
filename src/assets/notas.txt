@@ -1,0 +1,283 @@
+
+//////////////////////////////////////////////////////////////////////////////// 
+Codigo de un contador
+
+
+import React, {  useState } from 'react'
+
+
+
+
+const ItemCount = () => {
+   const [count, setCount] = useState(0)
+  
+   const click = () => {
+    setCount(count +1)
+    setCount(count -1)
+   
+  
+}
+ return (
+  
+ <div>
+    <div className='  cart__css'>
+        <strong className='yourCart__text' >Your cart</strong>
+        <button 
+        onClick={() => setCount(count+1)} className='btn boton__aumentar'>Add</button>
+         <strong className='contador' >{count}</strong>
+         <button 
+         onClick={() => setCount(count -1)} disabled={count ===0} className='btn boton__disminuir'>Delete</button>
+         <button 
+         onClick={() => setCount(0)}  className='btn boton__reset'>Reset</button>
+    </div>
+  
+       
+  </div>
+  
+  )
+  
+}
+
+export default ItemCount
+///////////////////////////////////////////////////////////////////////////
+
+otro contador 
+import React, {  useState } from 'react'
+
+
+
+
+const ItemCount = () => {
+   const [count, setCount] = useState(0)
+  
+   const click = () => {
+    setCount(count +1)
+    setCount(count -1)
+   
+  
+}
+ return (
+  
+ <div>
+    <div className='  cart__css'>
+        <strong className='yourCart__text' >Your cart</strong>
+        <button 
+        onClick={() => setCount(count+1)} className='btn boton__aumentar'>Add</button>
+         <strong className='contador' >{count}</strong>
+         {/* <button 
+         onClick={() => setCount(count -1)} disabled={count ===0} className='btn boton__disminuir'>Delete</button> */}
+         <button 
+         onClick={() => setCount(0)}  className='btn boton__reset'>Delete</button>
+    </div>
+  
+       
+  </div>
+  
+  )
+  
+}
+
+export default ItemCounts
+
+
+////////////////////////////////////////////////////////////////////////// 
+CSS del componente
+
+.yourCart__text{
+    text-align: center;
+    color: rgb(22, 21, 21);
+}
+.contador{
+    text-align: center;
+    font-size: 1.2rem;
+}
+.cart__css{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    row-gap: 5px;
+    
+}
+.boton__aumentar, .boton__disminuir, .boton__reset{
+    width: 25rem;
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+ ITEM DETAIL CONTAINER 1ER PRUEBA
+import React from 'react'
+import { Item } from './Item';
+import { useEffect, useState } from 'react';
+import { ItemDetail } from './ItemDetail';
+
+
+const itemDetail = [
+  {id: 1 , title:"Nike running" , description: "The ultimate techologie, high speed", price: 'U$ 149' , pictureURL:"" ,Stock: 12},
+   {id: 2 , title:"Nike metcon" , description: "you really train hard? you need this one", price: 'U$ 160' , pictureURL:"" , Stock: 10},
+   {id: 3 , title:"Nike training" , description: "Versatiliy, high performans", price: 'U$ 120' , pictureURL:"" , Stock: 7},
+   {id: 4 , title:"Nike urban" , description: "Style, quality & comfort", price: 'U$ 110' , pictureURL:"" , Stock: 8
+  }
+];
+
+const ItemDetailContainer = () => {
+  
+  const [detail, setDetail] =useState ([])
+  useEffect(() =>{ //solo dentro del mount/montaje
+      getProductsDetails().then( res => {
+        console.log(res);
+        setDetail( res );
+    })
+       .catch( err => { console.log(err) })
+      
+  },[])
+
+const getProductsDetails = () => { 
+   
+  return new Promise ((resolve, reject) =>{
+     setTimeout(() => {
+        resolve(itemDetail)
+     }, 2000);
+     
+  })
+}
+  
+  
+  
+  
+  
+  
+  return (
+    <div><h3 className='m-10 products_p '>Products detail</h3> 
+      <div className='item_list_div'>
+      
+       { detail.map( i => <ItemDetail key={i.id} {...i}/> ) }
+      </div> 
+      </div>
+  )
+}
+
+export default ItemDetailContainer
+////////////////////////////////////////////////////////////////////
+
+
+ItemList, lo que yo tenia lo guardo aca para probar otro Codigo
+import React from "react";
+import { useEffect, useState } from "react";
+import Item from './Item'
+
+const SHOES = [
+    {id: 1 , category:"Running",title:"Nike running" , description: "The ultimate techologie, high speed", price: 'U$ 149' , image:"https://www.mensjournal.com/wp-content/uploads/2021/12/NikeAlphaflyMain1.jpg?quality=86&strip=all" ,Stock: 12},
+     {id: 2 , category:"Crossfit",title:"Nike metcon" , description: "you really train hard? you need this one", price: 'U$ 160' , image:"https://9b6e8d.cdn.akinoncloud.com/products/2022/09/22/914478/1df358c0-a362-4548-a8b2-1b733cadef4e_size632x632_cropCenter.jpg" , Stock: 10},
+     {id: 3 , category:"Trainning",title:"Nike training" , description: "Versatiliy, high performans", price: 'U$ 120' , image:"https://barcin.akinoncdn.com/products/2022/09/20/1051370/8e1b8a21-9baf-4dd3-9991-6b44d282dbad_size480x480_cropCenter.jpg" , Stock: 7},
+     {id: 4 , category:"Urban", title:"Nike" , description: "Style", price: 'U$ 110' , image:"https://barcin.akinoncdn.com/products/2022/09/21/913378/e110042a-312f-4e58-9270-1692b2d49ec5_size480x480_cropCenter.jpg" , Stock: 8},
+     {id: 5 , category:"Urban", title:"Nike " , description: "Style", price: 'U$ 110' , image:"https://barcin.akinoncdn.com/products/2022/09/21/913378/e110042a-312f-4e58-9270-1692b2d49ec5_size480x480_cropCenter.jpg" , Stock: 8},
+
+  ];
+  
+
+
+
+const ItemList = () => {
+
+    const [products, setProducts] = useState([])
+    
+    useEffect(()=>{
+        getProducts().then(res =>{
+            setProducts(res)
+        })
+    },[])
+    
+    
+    const getProducts = ()=>{
+        return new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve(SHOES)
+            },2000)
+        })
+    }
+    
+    
+      return (
+        <div className="ItemList">
+            {products.map(p => <Item key={p.id} {...p}/>)}
+        </div>
+      )
+    }
+    
+    export default ItemList
+/////////////////
+
+ItemList, lo que yo tenia lo guardo aca para probar otro Codigo
+
+import React from 'react';
+import ItemDetail from './ItemDetail';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
+
+
+
+const SHOES = [
+     {id: 1 , title:"Nike running" , description: "The ultimate techologie, high speed", price: 'U$ 149' , image: "https://www.mensjournal.com/wp-content/uploads/2021/12/NikeAlphaflyMain1.jpg?quality=86&strip=all"  ,Stock: 12},    
+     {id: 2 , title:"Nike metcon" , description: "you really train hard? you need this one", price: 'U$ 160' , image:"https://9b6e8d.cdn.akinoncloud.com/products/2022/09/22/914478/1df358c0-a362-4548-a8b2-1b733cadef4e_size632x632_cropCenter.jpg" , Stock: 10},
+     {id: 3 , title:"Nike training" , description: "Versatiliy, high performans", price: 'U$ 120' , image:"https://barcin.akinoncdn.com/products/2022/09/20/1051370/8e1b8a21-9baf-4dd3-9991-6b44d282dbad_size480x480_cropCenter.jpg" , Stock: 7},
+     {id: 4 , title:"Nike urban" , description: "Style", price: 'U$ 110' , image:"https://barcin.akinoncdn.com/products/2022/09/21/913378/e110042a-312f-4e58-9270-1692b2d49ec5_size480x480_cropCenter.jpg" , Stock: 8},
+     {id: 5 , title:"Nike Urban" , description: "Style", price: 'U$ 110' , image:"https://barcin.akinoncdn.com/products/2022/09/21/913378/e110042a-312f-4e58-9270-1692b2d49ec5_size480x480_cropCenter.jpg" , Stock: 8},
+  ];
+
+const ItemDetailContainer = () => {
+    const {id} = useParams();
+    console.log(id,'soy el id');
+    const [item, setItem] = useState({})
+
+   
+    
+    const getProducts = ()=> new Promise((resolve, reject)=>{
+        setTimeout(()=>resolve(SHOES.find(p => p.id == id)),2000)
+    })
+    
+    useEffect(()=>{
+        getProducts().then(res =>{
+            setItem(res)
+        })
+    },[])
+    
+
+
+
+    
+    const{ title, description, price, image, stock}= item;
+
+      return (
+        <div>
+            <ItemDetail  title={title} description={description} price={price} image={image} stock={stock}/>
+        </div>
+      )
+}
+
+export default ItemDetailContainer
+
+
+//////////////////////CartContext
+
+import { useContext } from "react";
+import { createContext } from "react";
+import { useState } from "react";
+
+export const contexto = createContext()
+
+/* export const useCartContext = () =>{
+    const CartContext = useContext(contexto)
+    return CartContext
+} */
+
+
+export const CartContext = ({children}) => {
+    return(
+        <contexto.Provider value={{nombre: 'Pedro'}}>
+            {children}
+        </contexto.Provider>
+    )
+}

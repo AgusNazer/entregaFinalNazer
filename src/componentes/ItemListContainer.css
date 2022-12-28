@@ -1,0 +1,17 @@
+.list__container__text{
+    margin: 5px;
+    text-align: center;
+    font-family:sans-serif;
+    color: rgb(44, 40, 40);
+}
+.greeting:hover{
+    color: rgb(103, 47, 150);
+    cursor: pointer;
+}
+.item_list_div{
+    text-align: center;
+    border: 1px solid red;
+}
+.products_p{
+    text-align: center;
+}
