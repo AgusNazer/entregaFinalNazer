@@ -13,11 +13,11 @@ const NavBar = () => {
     <div className='navBar__Flex'>
         <div className="navbar bg-green-100">
         <div className="flex-1">
-            <Link to='/preEntregaNazer/' className="btn btn-ghost normal-case text-xl a__shoos__text">Shoos!</Link>
+            <Link to='/entregaFinalNazer/' className="btn btn-ghost normal-case text-xl a__shoos__text">Shoos!</Link>
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
                 
-                <Link to='/preEntregaNazer/' ><img className='nike__celu' src='https://www.tradeinn.com/m/13812/138126109/nike-zapatillas-metcon-7.jpg'/></Link>
+                <Link to='/entregaFinalNazer/' ><img className='nike__celu' src='https://www.tradeinn.com/m/13812/138126109/nike-zapatillas-metcon-7.jpg'/></Link>
                 </div>
             </label> 
             <div className="dropdown dropdown-end">
@@ -25,10 +25,10 @@ const NavBar = () => {
 
             <ul className='nav-items navbar m-1 text-lg font-medium  italic'>
                 <li className='space-x-1.5 '>
-                  <Link to= {'/preEntregaNazer/category/Running'} ><p>Running</p></Link>
-                  <Link to= {'/preEntregaNazer/category/Crossfit'} ><p>Crossfit</p></Link>
-                  <Link to= {'/preEntregaNazer/category/Trainning'} ><p>Training</p></Link>
-                  <Link to= {'/preEntregaNazer/category/Urban'} ><p>Urban</p></Link>
+                  <Link to= {'/entregaFinalNazer/category/Running'} ><p>Running</p></Link>
+                  <Link to= {'/entregaFinalNazer/category/Crossfit'} ><p>Crossfit</p></Link>
+                  <Link to= {'/entregaFinalNazer/category/Trainning'} ><p>Training</p></Link>
+                  <Link to= {'/entregaFinalNazer/category/Urban'} ><p>Urban</p></Link>
                     
                 </li>
             </ul>

@@ -14,37 +14,66 @@ export const CartContextProvider = ({children}) => {
 
 // arreglar la logica del contador al agregar al carrito
     
-    const addToCart = (item, cantidad) => {
-        if(cart.length===0){
-           setCart([{
-               ...item, 
-               cantidad: cantidad
-             
-           }])
-        }  else {
-            const findedItem = cart.find(i => i.id === item.id)
-            if(!findedItem ){
-                setCart([
-                    ...cart,
-                    {
-                        ...item,
-                        cantidad: cantidad
-                    }
-                ])
-            }else{
-                // Probar en la siguiente linea el '!==' por '===' para poder
-                //  agregar un mismo producto dos o mas veces.
-                const filteredItem = cart.filter(i => i.id !== item.id)
-                setCart([
-                    ...filteredItem,
-                    {
-                        ...findedItem,
-                        cantidad: findedItem.cantidad 
-                    }
-                ])
+
+
+const addToCart = (item, cantidad) => {
+    // creamos un nuevo objeto con los datos que recibimos por parámetros. Haciendo spread del producto.
+      const newObj = {
+        ... item,
+        cantidad
+      }
+    // hacer una condicional, si el nuevo objeto está en el carrito
+      if(isInCart(newObj.id)){
+    // vamos a hacer un map y sumar las cantidades, así no duplicamos
+          cart.map(el => {
+            if(el.id === newObj.id)  {
+              el.cantidad+= newObj.cantidad
             }
+    //retornamos 
+            return(el)
+            })
         }
-     }
+    // si es un producto que no está en el carrito, lo va a agregar. 
+    else {
+          setCart([... cart , newObj])
+        }
+      }
+      const isInCart = (id) => {
+        return cart.some(el => el.id === id)
+      }
+
+
+
+    // const addToCart = (item, cantidad) => {
+    //     if(cart.length===0){
+    //        setCart([{
+    //            ...item, 
+    //            cantidad: cantidad
+             
+    //        }])
+    //     }  else {
+    //         const findedItem = cart.find(i => i.id === item.id)
+    //         if(!findedItem ){
+    //             setCart([
+    //                 ...cart,
+    //                 {
+    //                     ...item,
+    //                     cantidad: cantidad
+    //                 }
+    //             ])
+    //         }else{
+                
+    //             const filteredItem = cart.filter(i => i.id !== item.id)
+    //             setCart([
+    //                 ...filteredItem,
+    //                 {
+    //                     ...findedItem,
+    //                     cantidad: findedItem.cantidad 
+    //                 }
+    //             ])
+    //         }
+    //     }
+    //  }
    
     // Muestra los items en el cart icono
      const totalItemsCarrito = () => {

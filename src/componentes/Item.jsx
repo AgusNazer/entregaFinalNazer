@@ -15,7 +15,7 @@ import React from "react"
           <div>{stock}</div>
           <div>{price}</div>
           <figure className='w-80 mt-10 m-5 ml-5 imagen_container '><img src={image} /></figure>
-          <Link to={`/preEntregaNazer/item/${id}`} className="btn btn-info">View Details</Link> 
+          <Link to={`/entregaFinalNazer/item/${id}`} className="btn btn-info">View Details</Link> 
            
           
       </div>

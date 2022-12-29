@@ -28,12 +28,12 @@ function App() {
             <NavBar/>
             {/* <Footer/> */}
         <Routes>
-           <Route path='/preEntregaNazer/' element={<ItemListContainer greeting='Welcome to shoos shop' />} />  
-           <Route path='/preEntregaNazer/item/:id' element={<ItemDetailContainer />}/> 
-           <Route path='/preEntregaNazer/category/:idCategory' element={<ItemListContainer/>}/>
+           <Route path='/entregaFinalNazer/' element={<ItemListContainer greeting='Welcome to shoos shop' />} />  
+           <Route path='/entregaFinalNazer/item/:id' element={<ItemDetailContainer />}/> 
+           <Route path='/entregaFinalNazer/category/:idCategory' element={<ItemListContainer/>}/>
           {/* arreglar la ruta del carrito */}
             {/* <Route path='/preEntregaNazer/Cart' element={<Cart/>}/>  */}
-           <Route path='/preEntregaNazer/CartWidget' element={<CartWidget/>}/>
+           <Route path='/entregaFinalNazer/CartWidget' element={<CartWidget/>}/>
         </Routes>
         </div>
       </BrowserRouter>
