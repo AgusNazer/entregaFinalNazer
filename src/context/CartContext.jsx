@@ -12,7 +12,6 @@ export const CartContextProvider = ({children}) => {
     console.log(cart)
 
 
-// arreglar la logica del contador al agregar al carrito
     
 
 
@@ -41,41 +40,7 @@ const addToCart = (item, cantidad) => {
       const isInCart = (id) => {
         return cart.some(el => el.id === id)
       }
-
-
-
-    // const addToCart = (item, cantidad) => {
-    //     if(cart.length===0){
-    //        setCart([{
-    //            ...item, 
-    //            cantidad: cantidad
-             
-    //        }])
-    //     }  else {
-    //         const findedItem = cart.find(i => i.id === item.id)
-    //         if(!findedItem ){
-    //             setCart([
-    //                 ...cart,
-    //                 {
-    //                     ...item,
-    //                     cantidad: cantidad
-    //                 }
-    //             ])
-    //         }else{
-                
-    //             const filteredItem = cart.filter(i => i.id !== item.id)
-    //             setCart([
-    //                 ...filteredItem,
-    //                 {
-    //                     ...findedItem,
-    //                     cantidad: findedItem.cantidad 
-    //                 }
-    //             ])
-    //         }
-    //     }
-    //  }
-   
-    // Muestra los items en el cart icono
+// Muestra los items en el cart icono
      const totalItemsCarrito = () => {
         return cart.reduce((acc, item) => acc + item.cantidad, 0)
      }
@@ -83,14 +48,26 @@ const addToCart = (item, cantidad) => {
         return cart.reduce((acc, item) => acc + item.cantidad * item.price , 0)
     }
      
+const emptyCart = () => {
+    setCart([])
+}
+
+const deleteItemById = (id) => {
+    const newCart =cart.filter(item => item.id !== id)
+    setCart(newCart)
+}
+
     return(
        <CartContext.Provider value={{
         cart,
         addToCart,
         totalItemsCarrito,
-        totalPrecioCarrito
+        totalPrecioCarrito,
+        emptyCart,
+        deleteItemById
         }}>
             {children}
         </CartContext.Provider>
     )
 }
+

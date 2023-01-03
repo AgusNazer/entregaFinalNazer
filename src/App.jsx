@@ -1,5 +1,5 @@
 
-
+{/* <FontAwesomeIcon icon="fa-thin fa-trash" /> */}
 import { CartContextProvider } from './context/CartContext'
 import './App.css'
 import NavBar from './componentes/NavBar'
@@ -12,10 +12,10 @@ import './componentes/ItemCount.css'
 import './componentes/Item.css'
 import './componentes/ItemList.css'
 import CartWidget from './componentes/CartWidget'
-// import Cart from './componentes/Cart'
+ import CartView from './componentes/CartView'
 // import Footer from './componentes/Footer'
 
-
+//  arreglar rutas de Cart componente.
 
 function App() {
   
@@ -32,7 +32,7 @@ function App() {
            <Route path='/entregaFinalNazer/item/:id' element={<ItemDetailContainer />}/> 
            <Route path='/entregaFinalNazer/category/:idCategory' element={<ItemListContainer/>}/>
           {/* arreglar la ruta del carrito */}
-            {/* <Route path='/preEntregaNazer/Cart' element={<Cart/>}/>  */}
+            <Route path='/entregaFinalNazer/CartView' element={<CartView/>}/> 
            <Route path='/entregaFinalNazer/CartWidget' element={<CartWidget/>}/>
         </Routes>
         </div>

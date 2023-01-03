@@ -17,7 +17,9 @@ import { Link } from "react-router-dom"
     return (
     <> 
       <div className="m-5 bg-gray-400 p-5">
+
           <div>{item.title}</div>
+          {/* <div>{item.quantity}</div> */}
           <div>{item.stock}</div>
           <div>{item.price}</div>
           <div>{item.description}</div>
@@ -26,7 +28,7 @@ import { Link } from "react-router-dom"
        { 
          !purchase ? 
            <ItemCount stock={item.Stock} initial={0} onAdd={onAdd} />
-         :  <Link to={'/preEntregaNazer/CartWidget'} className='btn'>Finish purchase</Link>
+         :  <Link to={'/entregaFinalNazer/CartView'} className='btn'>Finish purchase</Link>
          }
          </div>
       </div>
