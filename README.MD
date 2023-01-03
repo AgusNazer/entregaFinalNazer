@@ -1,6 +1,6 @@
 Vite + React app!
 
-# Tecnologias y herramientas de esta app: React Js, jsx, css, tailwind, fontawesome.
+# Tecnologias y herramientas de esta app: React Js, Html, jsx, css, tailwind, fontawesome.
 
 # Aplicacion ecomerce
 Tienda de venta de zapatillas deportivas y urbanas.
