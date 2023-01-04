@@ -33,7 +33,8 @@ import { FaTrash } from "react-icons/fa";
     
 
     {
-     cart.map(item => (
+     cart.map(item => 
+      (
         <div key={item.id} className='w-[60%] flex relative h-[100px] bg-dimwhite m-1 ' >
        <div className="flex justify-center items-center w-[12%]">
         <button 
@@ -80,7 +81,7 @@ import { FaTrash } from "react-icons/fa";
     
     <div className="w-[60%] flex justify-end m-1 gap5" >
       <button onClick={() => emptyCart()} className="px-5 py-2 bg-red-600 text-white font-medium uppercase"> Empty cart </button>
-      {/* <Link to='/Checkout' className="px-5 py-2 bg-primary text-white font-medium uppercase"> Finish buying </Link> */}
+      <Link to='/entregaFinalNazer/Checkout' className="px-5 py-2 bg-primary text-white font-medium uppercase"> Finish buying </Link>
     </div>
     
     </>
@@ -90,6 +91,7 @@ import { FaTrash } from "react-icons/fa";
         <h1 className="text-2xl font-medium">The cart is empty!</h1>
         <div className="m-6">
          <Link to='/entregaFinalNazer/' className="text-white font-medium uppercase bg-primary py-2 px-4"> Back to shop </Link>
+         
             
         </div>    
         </div>

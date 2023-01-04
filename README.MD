@@ -49,5 +49,6 @@ Simplemente ejecute el comando 'npm run dev' dentro de su consola dentro del dir
 De esta forma se inicia en forma local y se puede acceder en http://localhost:5173/entregaFinalNazer/ para verlo en el navegador.
 
 # Contacto 
-# https://github.com/AgusNazer
-# www.linkedin.com/in/agustínnazer
+ https://github.com/AgusNazer
+ 
+ www.linkedin.com/in/agustínnazer

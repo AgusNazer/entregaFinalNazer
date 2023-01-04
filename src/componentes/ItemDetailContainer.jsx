@@ -3,6 +3,10 @@ import ItemDetail from './ItemDetail';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import products from '../componentes/mock/products';
+// import { getFirestore, doc, getDoc } from 'firebase/firestore';
+
+
+
 
 const ItemDetailContainer = () => {
 

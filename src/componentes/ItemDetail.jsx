@@ -28,7 +28,7 @@ import { Link } from "react-router-dom"
        { 
          !purchase ? 
            <ItemCount stock={item.Stock} initial={0} onAdd={onAdd} />
-         :  <Link to={'/entregaFinalNazer/CartView'} className='btn'>Finish purchase</Link>
+         :  <Link to={'/entregaFinalNazer/CartView'} className='btn'>Go to cart</Link>
          }
          </div>
       </div>

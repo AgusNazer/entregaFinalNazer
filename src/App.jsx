@@ -12,10 +12,13 @@ import './componentes/ItemCount.css'
 import './componentes/Item.css'
 import './componentes/ItemList.css'
 import CartWidget from './componentes/CartWidget'
- import CartView from './componentes/CartView'
+import CartView from './componentes/CartView'
+
+import Checkout from './componentes/Checkout'
+
+
 // import Footer from './componentes/Footer'
 
-//  arreglar rutas de Cart componente.
 
 function App() {
   
@@ -31,9 +34,10 @@ function App() {
            <Route path='/entregaFinalNazer/' element={<ItemListContainer greeting='Welcome to shoos shop' />} />  
            <Route path='/entregaFinalNazer/item/:id' element={<ItemDetailContainer />}/> 
            <Route path='/entregaFinalNazer/category/:idCategory' element={<ItemListContainer/>}/>
-          {/* arreglar la ruta del carrito */}
             <Route path='/entregaFinalNazer/CartView' element={<CartView/>}/> 
            <Route path='/entregaFinalNazer/CartWidget' element={<CartWidget/>}/>
+           {/* <Route path='/entregaFinalNazer/' element={</>}/> */}
+           <Route path='/entregaFinalNazer/Checkout' element={<Checkout/>}/>
         </Routes>
         </div>
       </BrowserRouter>
