@@ -3,7 +3,7 @@ import ItemDetail from './ItemDetail';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import products from '../componentes/mock/products';
-// import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
 
 
@@ -17,16 +17,24 @@ const ItemDetailContainer = () => {
     const [item, setItem] = useState({})
 
    
-    
-    const getProducts = ()=> new Promise((resolve, reject)=>{
-        setTimeout(()=>resolve(products.find(product => product.id === parseInt(id))),2000)
-    })
+    const getProduct = async () => {
+        const dataBase= getFirestore()
+            const document = doc(dataBase, "items", id)
+            const response = await getDoc(document)
+            const result = {id: response.id, ...response.data()}
+            setItem(result)
+    }
+    // const getProducts = ()=> new Promise((resolve, reject)=>{
+    //     setTimeout(()=>resolve(products.find(product => product.id === parseInt(id))),2000)
+    // })
     
     useEffect(()=>{
-        getProducts()
-        .then(res => setItem(res)
-        )
-    },[])
+        // getProducts()
+        // .then(res => setItem(res)
+
+        getProduct()
+        // )
+    },[id])
     
 
     return (

@@ -23,10 +23,10 @@ const Checkout = () => {
     }
 
     return (
-        <>
+        <div className='flex flex-col' >
             <h1>Checkout - Form</h1>
-            <form className="row" onSubmit={enviarDatos}>
-                <div className="col-md-3 border " >
+            <form className="flex flex-col" >
+                <div className="col-md-3 border  " >
                     <input type="text" placeholder="Nombre completo" className="form-control" onChange={handleInputChange} name="nombre"></input>
                 </div>
                 <div className="col-md-3 border">
@@ -47,7 +47,7 @@ const Checkout = () => {
                 <li>{datos.nombre}</li>
                 <li>{datos.apellido}</li>
             </ul> */}
-        </>
+        </div>
     );
 }
  

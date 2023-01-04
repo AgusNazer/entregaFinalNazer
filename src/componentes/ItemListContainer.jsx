@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-/* import { products } from '../mock/products' */
+
 import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
 import { useEffect } from 'react'
-import products from './mock/products'
 
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 
 const ItemListContainer = ({greeting}) => {
 
@@ -14,26 +14,39 @@ const ItemListContainer = ({greeting}) => {
   
   const [productList, setProductList] = useState([])
   
-  const getProducts = ()=> new Promise((resolve, reject)=>{
-    setTimeout(()=>resolve(products),2000)
+//   const getProducts = ()=> new Promise((resolve, reject)=>{
+//     setTimeout(()=>resolve(products),2000)
     
-  })
+//   })
   
-  useEffect(()=>{
-  
-    if (idCategory){
-      getProducts()
-      .then(products => setProductList(products.filter(p => p.category ===idCategory)))
-      .catch(error => console.log(error))
-    } else {
-      getProducts()
-      .then(products => setProductList(products))
-      .catch(error => console.log(error))
-    } 
-    return () => setProductList([])
-  
+const getProducts= async () => {  
+    const dataBase= getFirestore()
+    const collectionRef = collection (dataBase, 'items')
+    const snapshot = await getDocs(collectionRef)
+    setProductList(snapshot.docs.map(d => ({id:d.id, ...d.data()  } )))
+}
+
+
+const getProductsCategory = async () => {  
+    const dataBase= getFirestore()
+    const collectionRef = query(collection(dataBase,"items"),where('categoryId', '==', idCategory))
+    const snapshot = await getDocs(collectionRef)
+    setProductList(snapshot.docs.map(d => ({id:d.id, ...d.data()  } )))   
+}
+useEffect(()=>{
+    // if (idCategory){
+    //   getProducts()
+    //   .then(products => setProductList(products.filter(p => p.category ===idCategory)))
+    //   .catch(error => console.log(error))
+    // } else {
+    //   getProducts()
+    //   .then(products => setProductList(products))
+    //   .catch(error => console.log(error))
+    // } 
+    // return () => setProductList([])
+    idCategory ? getProductsCategory():getProducts()
     
-    
+     
   },[idCategory])
   
    
@@ -57,6 +70,24 @@ const ItemListContainer = ({greeting}) => {
   }
   
   export default ItemListContainer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -186,3 +217,14 @@ const ItemListContainer = ({greeting}) => {
 // }
 
 // export default ItemListContainer
+
+
+
+
+
+// traer data por ID
+// const getItemsCategory = async (id) => {
+//     const docRef = doc(collection(db, "items"), id)
+//     const docSnap = await getDoc(docRef)
+//     return docSnap.data()
+// }
