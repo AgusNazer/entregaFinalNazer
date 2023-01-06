@@ -13,7 +13,6 @@ import './componentes/Item.css'
 import './componentes/ItemList.css'
 import CartWidget from './componentes/CartWidget'
 import CartView from './componentes/CartView'
-
 import Checkout from './componentes/Checkout'
 
 

@@ -21,15 +21,7 @@ import { FaTrash } from "react-icons/fa";
 
     <>
     
-    {/* <h1 className="uppercase font-semibold text-lg m-2">Cart</h1>
-    <div className="w-[60%] flex relative h-[50px] bg-dimwhite m-1 font-medium">
-    <div className="flex justify-center items-center w-[12%]">
-    <div className="flex justify-center items-center w-[45%]">Product</div>
-    <div className="flex justify-center items-center w-[15%]">Unit Price</div>
-    <div className="flex justify-center items-center w-[12%]">Units</div>
-    <div className="flex justify-center items-center w-[15%]">Total price</div>
-    </div>
-    </div> */}
+   
     
 
     {

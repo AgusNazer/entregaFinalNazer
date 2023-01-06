@@ -1,57 +1,108 @@
-import React, {Fragment, useState} from 'react';
+import { async } from '@firebase/util';
+import { getFirestore, collection, addDoc, updateDoc, doc } from 'firebase/firestore';
+import React  from 'react';
+import { useContext, useState } from "react"
+import { CartContext } from '../context/CartContext';
+import Swal from 'sweetalert2';
+
 
 const Checkout = () => {
 
 
-    const [datos, setDatos] = useState({
-        nombre: '',
-        apellido: ''
-    })
+    
 
-    const handleInputChange = (event) => {
-        // console.log(event.target.name)
-        // console.log(event.target.value)
-        setDatos({
-            ...datos,
-            [event.target.name] : event.target.value
-        })
+    const {cart, totalPrecioCarrito, emptyCart, deleteItemById} = useContext(CartContext)
+    
+    // const [buyer, setBuyer] = useState({
+    //     name: "",
+    //     email: "",
+    //     phone: "",
+    //     city: "",
+    //     postalCode: "",
+    // })
+
+
+// Expresiones regulares para los campos e-mail y teléfono
+// const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
+// const telephoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{1,6}$/im
+
+    // Obtener los datos del cliente
+    // const handlerBuyer = (e) => {
+    //     setBuyer({ ...buyer, [e.target.name]: e.target.value })
+    // }
+
+    const makeOrder = (e) => {
+     e.preventDefault()
+
+
+   
+
+
+        const  user = {name:'juan',phone: 2235678123, email:'juanperez@gmail.com' }
+        const order = {
+            buyer: user,
+            items: cart
+        }
+        console.log('levantando la order:', order)
+        saveOrder( order )
     }
 
-    const enviarDatos = (event) => {
-        event.preventDefault()
-        console.log('enviando datos...' + datos.nombre + ' ' + datos.apellido)
+    const saveOrder = async ( order ) => {
+         const db = getFirestore()
+         const orderCollection = collection(db, 'orders')
+         const {id} = await addDoc(orderCollection, order)
+         console.log('Your order ID:', {id});
+        Swal.fire('Thanks for visit us!. Your order ID is :', id  );
     }
+    const updateOrder = ( id ) => {
+        const db = getFirestore()
+
+        const orderDoc = doc(db, 'orders', id)
+        updateDoc(orderDoc, 
+            {name:'Agushgntin',
+            phone: 2236466678123, 
+            mail:'Agugfhhtinperez@gmail.com'}
+             ).then (res => {console.log(res)})
+    }
+
+
+
+    
+    const editOrderHandler = (e) => {
+        e.preventDefault()
+        updateOrder('43GIJZESf8octqRkmVso')
+    }
+
 
     return (
         <div className='flex flex-col' >
-            <h1>Checkout - Form</h1>
+            <h1>Checkout - Buy form</h1>
             <form className="flex flex-col" >
                 <div className="col-md-3 border  " >
-                    <input type="text" placeholder="Nombre completo" className="form-control" onChange={handleInputChange} name="nombre"></input>
+                    <input type="text" placeholder="Nombre completo" className="form-control"  name="nombre"></input>
                 </div>
                 <div className="col-md-3 border">
-                    <input type="text" placeholder="Correo" className="form-control" onChange={handleInputChange} name="apellido"></input>
+                    <input type="text" placeholder="Correo" className="form-control"  name="apellido"></input>
                 </div>
                 <div className="col-md-3 border">
-                    <input type="text" placeholder="Password" className="form-control" onChange={handleInputChange} name="apellido"></input>
+                    <input type="text" placeholder="Phone number" className="form-control"  name="apellido"></input>
                 </div>
                 <div className="col-md-3 border">
-                    <input type="text" placeholder="City" className="form-control" onChange={handleInputChange} name="apellido"></input>
+                    <input type="text" placeholder="City" className="form-control"  name="apellido"></input>
                 </div>
                 <div className="col-md-3 border">
-                    <input type="text" placeholder="Code postal" className="form-control" onChange={handleInputChange} name="apellido"></input>
+                    <input type="text" placeholder="Postal code " className="form-control"  name="apellido"></input>
                 </div>
-                <button type="submit" className="btn btn-primary">Confirmar compra</button>
+                <button onClick={makeOrder}  className="btn btn-primary">Confirm/buy</button>
+                <button onClick={editOrderHandler}  className="btn btn-primary">Update order</button>
             </form>
-            {/* <ul>
-                <li>{datos.nombre}</li>
-                <li>{datos.apellido}</li>
-            </ul> */}
         </div>
     );
+
 }
- 
-
-
-
+    
 export default Checkout
+
+
+
+
