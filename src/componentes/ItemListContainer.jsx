@@ -34,16 +34,7 @@ const getProductsCategory = async () => {
     setProductList(snapshot.docs.map(d => ({id:d.id, ...d.data()  } )))   
 }
 useEffect(()=>{
-    // if (idCategory){
-    //   getProducts()
-    //   .then(products => setProductList(products.filter(p => p.category ===idCategory)))
-    //   .catch(error => console.log(error))
-    // } else {
-    //   getProducts()
-    //   .then(products => setProductList(products))
-    //   .catch(error => console.log(error))
-    // } 
-    // return () => setProductList([])
+   
     idCategory ? getProductsCategory():getProducts()
     
      
