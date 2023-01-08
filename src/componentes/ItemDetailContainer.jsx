@@ -12,7 +12,6 @@ const ItemDetailContainer = () => {
 
     const {id} = useParams();
 
-   /*  console.log(id,'soy el id'); */
 
     const [item, setItem] = useState({})
 
@@ -24,16 +23,13 @@ const ItemDetailContainer = () => {
             const result = {id: response.id, ...response.data()}
             setItem(result)
     }
-    // const getProducts = ()=> new Promise((resolve, reject)=>{
-    //     setTimeout(()=>resolve(products.find(product => product.id === parseInt(id))),2000)
-    // })
+
     
     useEffect(()=>{
-        // getProducts()
-        // .then(res => setItem(res)
+        
 
         getProduct()
-        // )
+        
     },[id])
     
 

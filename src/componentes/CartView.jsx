@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { FaTrash } from "react-icons/fa";
 
-// FIX THE ICONS 
  export const CartView = () => {
     const {cart, totalPrecioCarrito, emptyCart, deleteItemById} = useContext(CartContext)
  

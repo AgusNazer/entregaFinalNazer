@@ -16,26 +16,22 @@ import CartView from './componentes/CartView'
 import Checkout from './componentes/Checkout'
 
 
-// import Footer from './componentes/Footer'
 
 
 function App() {
   
-// PONER EN LAS RUTAS UNA NUEVA RUTA PARA EL FIREBASE
     return (
         <CartContextProvider>
       <BrowserRouter>
           <div className='app'>
          
             <NavBar/>
-            {/* <Footer/> */}
         <Routes>
            <Route path='/entregaFinalNazer/' element={<ItemListContainer greeting='Welcome to shoos shop' />} />  
            <Route path='/entregaFinalNazer/item/:id' element={<ItemDetailContainer />}/> 
            <Route path='/entregaFinalNazer/category/:idCategory' element={<ItemListContainer/>}/>
             <Route path='/entregaFinalNazer/CartView' element={<CartView/>}/> 
            <Route path='/entregaFinalNazer/CartWidget' element={<CartWidget/>}/>
-           {/* <Route path='/entregaFinalNazer/' element={</>}/> */}
            <Route path='/entregaFinalNazer/Checkout' element={<Checkout/>}/>
         </Routes>
         </div>

@@ -8,7 +8,6 @@ const CartWidget = () => {
     
     const {totalItemsCarrito} = useContext(CartContext)
     
-    //   terminar el carrito y sus items. Luego, hacer la vista del carrito con los items agrgados
   return (
     <>
      <div>

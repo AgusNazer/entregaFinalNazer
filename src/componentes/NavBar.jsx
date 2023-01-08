@@ -33,13 +33,7 @@ const NavBar = () => {
                 </li>
             </ul>
             
-            
-           
-           
-            
-           
-            
-            </div>
+             </div>
         </div>
         <div className="flex-none">
             <div className="dropdown dropdown-end">

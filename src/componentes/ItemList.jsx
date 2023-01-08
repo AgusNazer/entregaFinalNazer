@@ -1,18 +1,11 @@
 import React from "react";
 import Item from './Item'
 
-
-
-
-
-
 export const ItemList = ({productList}) => {
 
-  
     
-    
-      return (
-        <div className="ItemList">
+    return (
+        <div className="ItemList ">
         
             {
               productList.map(item => <Item key={item.id} 
@@ -26,5 +19,4 @@ export const ItemList = ({productList}) => {
         </div>
       )
     }
-    
     export default ItemList
