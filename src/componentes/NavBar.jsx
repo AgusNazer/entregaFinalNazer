@@ -10,10 +10,11 @@ const NavBar = () => {
 
 
   return (
-    <div className='navBar__Flex'>
+    
+    <div className=''>
         <div className="navbar bg-green-100">
         <div className="flex-1">
-            <Link to='/entregaFinalNazer/' className="btn btn-ghost normal-case text-xl a__shoos__text">Shoos!</Link>
+            <Link to='/entregaFinalNazer/' className=" bg-teal-500 border-none hover:bg-teal-700 hover:text-teal-100 text-white font-bold py-2 px-4 rounded-full uppercase text-xl a__shoos__text ">Yor-ShooStore!</Link>
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
                 
@@ -23,12 +24,12 @@ const NavBar = () => {
             <div className="dropdown dropdown-end">
 
 
-            <ul className='nav-items navbar m-1 text-lg font-medium  italic'>
+            <ul className='nav-items navbar m-1 text-lg font-medium  italic '>
                 <li className='space-x-1.5 '>
-                  <Link to= {'/entregaFinalNazer/category/Running'} ><p>Running</p></Link>
-                  <Link to= {'/entregaFinalNazer/category/Crossfit'} ><p>Crossfit</p></Link>
-                  <Link to= {'/entregaFinalNazer/category/Trainning'} ><p>Training</p></Link>
-                  <Link to= {'/entregaFinalNazer/category/Urban'} ><p>Urban</p></Link>
+                  <Link to= {'/entregaFinalNazer/category/Running'} ><p className='hover:text-blue-700'>Running</p></Link>
+                  <Link to= {'/entregaFinalNazer/category/Crossfit'} ><p className='hover:text-green-600'>Crossfit</p></Link>
+                  <Link to= {'/entregaFinalNazer/category/Trainning'} ><p className='hover:text-purple-400'>Training</p></Link>
+                  <Link to= {'/entregaFinalNazer/category/Urban'} ><p className='hover:text-orange-400'>Urban</p></Link>
                     
                 </li>
             </ul>

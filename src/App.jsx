@@ -14,6 +14,7 @@ import './componentes/ItemList.css'
 import CartWidget from './componentes/CartWidget'
 import CartView from './componentes/CartView'
 import Checkout from './componentes/Checkout'
+import Footer from './componentes/Footer'
 
 
 
@@ -27,13 +28,14 @@ function App() {
          
             <NavBar/>
         <Routes>
-           <Route path='/entregaFinalNazer/' element={<ItemListContainer greeting='Welcome to shoos shop' />} />  
+           <Route path='/entregaFinalNazer/' element={<ItemListContainer greeting='Welcome to Yor-ShooStore!' />} />  
            <Route path='/entregaFinalNazer/item/:id' element={<ItemDetailContainer />}/> 
            <Route path='/entregaFinalNazer/category/:idCategory' element={<ItemListContainer/>}/>
             <Route path='/entregaFinalNazer/CartView' element={<CartView/>}/> 
            <Route path='/entregaFinalNazer/CartWidget' element={<CartWidget/>}/>
            <Route path='/entregaFinalNazer/Checkout' element={<Checkout/>}/>
         </Routes>
+        <Footer/>
         </div>
       </BrowserRouter>
       </CartContextProvider>

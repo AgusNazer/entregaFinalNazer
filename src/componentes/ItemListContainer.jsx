@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-
 import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
 import { useEffect } from 'react'
-
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
+import Loader from './Loader'
 
 const ItemListContainer = ({greeting}) => {
 
@@ -39,21 +38,20 @@ useEffect(()=>{
   
    
     return (
-      <>
-      <div className='text-3xl list__container__text greeting' >{greeting}  </div>
+      <div className=' md:bg-contain  ' style={{backgroundImage: `url("https://static1.abc.es/media/bienestar/2019/11/01/deportistas-veganos-1-kjPH--620x349@abc.jpg")`}}>
+      <div className='text-3xl list__container__text greeting text-gray-100 hover:text-gray-600' >{greeting}  </div>
        {
         
         productList.length
         ?
         <ItemList productList={productList}/>  
         :
-        <h1>Loading...</h1>
-       }     
+         <h1> Loading... <Loader loading={true}  /></h1>       }     
           
             
           
           
-      </>
+      </div>
     )
   }
   

@@ -7,7 +7,7 @@ import { useContext, useState } from "react"
 import { CartContext } from '../context/CartContext';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
-
+import Loader from './Loader';
 
 const Checkout = () => {
     const {cart, totalPrecioCarrito, emptyCart} = useContext(CartContext)
@@ -57,12 +57,13 @@ const [buyer, setBuyer] = useState({})
     }
 
     if(load){
-        return <h1>Cargado...</h1>
+        return <h1> Loading... <Loader loading={true}  /></h1>
+        
     }
         return (
             <>
             {orderID ? <div>
-                <h2>Thanks for buying, your order is: {orderID.id}</h2>
+                <h2 className='font-bold'>Thanks for buying, your order is: {orderID.id}</h2>
             </div>
             :<div className='flex flex-col' >
             <h1>Checkout - Buy form</h1>
@@ -89,9 +90,9 @@ const [buyer, setBuyer] = useState({})
                 
                 
                 <div className="w-[65%] flex justify-end m-1 gap5" >
-                  <button  type='submit' className="px-5 py-2 bg-green-600 text-white font-medium uppercase">Confirm/buy</button>
+                  <button  type='submit' className="bg-teal-500 hover:bg-teal-700 hover:text-teal-100 text-white font-bold py-2 px-4 rounded-full uppercase">Confirm/buy</button>
                 <Link to='/entregaFinalNazer/'>
-                  <button onClick={() => emptyCart()} className="px-5 py-2 bg-red-600 text-white font-medium uppercase"> Cancel/Back to shop </button>
+                  <button onClick={() => emptyCart()} className="bg-purple-300 hover:bg-purple-400 border-none hover:text-red-900 font-bold  py-2 px-4 rounded-full uppercase"> Cancel/Back to shop </button>
                   </Link>
                 </div>
 
