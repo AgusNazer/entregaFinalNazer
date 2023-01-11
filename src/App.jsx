@@ -8,7 +8,7 @@ import ItemListContainer from './componentes/ItemListContainer'
 import './componentes/ItemListContainer.css'
 import ItemDetailContainer from './componentes/ItemDetailContainer' 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import './componentes/ItemCount.css'
+
 import './componentes/Item.css'
 import './componentes/ItemList.css'
 import CartWidget from './componentes/CartWidget'
@@ -24,7 +24,7 @@ function App() {
     return (
         <CartContextProvider>
       <BrowserRouter>
-          <div className='app'>
+          <div className='app appCss'>
          
             <NavBar/>
         <Routes>

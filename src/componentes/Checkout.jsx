@@ -64,6 +64,8 @@ const [buyer, setBuyer] = useState({})
             <>
             {orderID ? <div>
                 <h2 className='font-bold'>Thanks for buying, your order is: {orderID.id}</h2>
+                <Link to='/entregaFinalNazer/' className=" m-2 bg-blue-400 btn hover:bg-blue-600 hover:text-white border-none py-2 px-4 rounded-full uppercase "> Back to shop </Link>
+
             </div>
             :<div className='flex flex-col' >
             <h1>Checkout - Buy form</h1>
@@ -75,7 +77,7 @@ const [buyer, setBuyer] = useState({})
                 <div className="col-md-3 border">
                     <input onChange={handleInputChange} type="text" placeholder="Correo" className="form-control"  name='Email'/>
                 </div>
-                
+
                 <div className="col-md-3 border">
                     <input onChange={handleInputChange} ype="text" placeholder="Phone number" className="form-control"  name='Phone'/>
                 </div>
