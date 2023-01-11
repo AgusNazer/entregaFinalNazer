@@ -12,7 +12,7 @@ const Footer = () => {
    <>
     
     <div className={' mx-6 pt-3 pb-4'}>
-        <div className='flex flex-col justify-center items-center text-center border-t border-gray-200 pt-4 text-gray-600 pt-3'>
+        <div className='flex flex-col justify-center items-center text-center border-t border-green-200 pt-4 text-gray-600 pt-3'>
 
             <p>© 2023 <a href='https://theshopyohjiyamamoto.com/' target='_blank'>Agustin Nazer</a>. All Rights reserved.</p>
             <p>Developed by Agustin Nazer with 💚  & passion👨🏽‍💻 </p>

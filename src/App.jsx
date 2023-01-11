@@ -1,5 +1,5 @@
 
-{/* <FontAwesomeIcon icon="fa-thin fa-trash" /> */}
+
 import { CartContextProvider } from './context/CartContext'
 import './App.css'
 import NavBar from './componentes/NavBar'
@@ -9,8 +9,8 @@ import './componentes/ItemListContainer.css'
 import ItemDetailContainer from './componentes/ItemDetailContainer' 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import './componentes/Item.css'
-import './componentes/ItemList.css'
+
+
 import CartWidget from './componentes/CartWidget'
 import CartView from './componentes/CartView'
 import Checkout from './componentes/Checkout'
@@ -28,7 +28,7 @@ function App() {
          
             <NavBar/>
         <Routes>
-           <Route path='/entregaFinalNazer/' element={<ItemListContainer greeting='Welcome to Yor-ShooStore!' />} />  
+           <Route path='/entregaFinalNazer/' element={<ItemListContainer greeting='Welcome to Naiki store' />} />  
            <Route path='/entregaFinalNazer/item/:id' element={<ItemDetailContainer />}/> 
            <Route path='/entregaFinalNazer/category/:idCategory' element={<ItemListContainer/>}/>
             <Route path='/entregaFinalNazer/CartView' element={<CartView/>}/> 

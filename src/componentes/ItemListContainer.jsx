@@ -4,7 +4,7 @@ import ItemList from './ItemList'
 import { useEffect } from 'react'
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 import Loader from './Loader'
-// import MediaQuery from 'react-responsive/types/Component'
+
 
 
 const ItemListContainer = ({greeting}) => {
@@ -42,8 +42,7 @@ useEffect(()=>{
     return (
        <div className=''>
         
-          {/* <div className=' md:bg-contain ' style={{backgroundImage: `url("https://static1.abc.es/media/bienestar/2019/11/01/deportistas-veganos-1-kjPH--620x349@abc.jpg")`}}> */}
-          <div className='text-3xl greeting  text-gray-100 hover:text-gray-600' >{greeting}  </div>
+          <div className='text-3xl greeting  text-gray-600 ' >{greeting}  </div>
            {
         
             productList.length
@@ -56,7 +55,7 @@ useEffect(()=>{
           
           
           </div>
-        // </div>
+        
     )
   }
   

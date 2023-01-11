@@ -1,6 +1,5 @@
 
 
-import { async } from '@firebase/util';
 import { getFirestore, collection, addDoc, updateDoc, doc } from 'firebase/firestore';
 import React  from 'react';
 import { useContext, useState } from "react"
@@ -13,9 +12,8 @@ const Checkout = () => {
     const {cart, totalPrecioCarrito, emptyCart} = useContext(CartContext)
     const [load, setLoad] = useState(false)
     const [orderID, setOrderID] = useState('')
-// Expresiones regulares para los campos e-mail y teléfono
 
-
+    // Expresiones regulares para los campos e-mail y teléfono
 const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
 const telephoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{1,6}$/im
 
