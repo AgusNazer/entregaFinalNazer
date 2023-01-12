@@ -13,7 +13,7 @@ import { FaTrash } from "react-icons/fa";
     return (
  
 
-<div className="flex flex-col m-10 justify-center items-center">
+<div className="flex flex-col m-10 justify-center items-center backgroundCartView">
   
  {
    cart.length > 0 ? (
@@ -67,8 +67,8 @@ import { FaTrash } from "react-icons/fa";
     </div>
     
     <div className="w-[60%] flex justify-center m-1 gap5" >
-      <Link to='/entregaFinalNazer/Checkout' className="bg-teal-500 hover:bg-teal-700 hover:text-blue-100 text-white font-bold py-2 px-4 rounded-full uppercase font-[popins]"> Finish buying! </Link>
-      <button onClick={() => emptyCart()} className="bg-purple-300 hover:bg-purple-300 border-none hover:text-red-900 font-bold py-2 px-4 rounded-full uppercase font-[popins]"> Empty cart </button>
+      <Link to='/entregaFinalNazer/Checkout' className="bg-blue-300 hover:bg-sky-700 hover:text-blue-100 text-white font-bold py-2 px-4 rounded-full uppercase font-[popins]"> Finish buying! </Link>
+      <button onClick={() => emptyCart()} className="bg-purple-100 hover:bg-pink-700 border-none hover:text-gray-100 font-bold py-2 px-4 rounded-full uppercase font-[popins]"> Empty cart </button>
     </div>
     
     </>

@@ -16,7 +16,7 @@ import { Link } from "react-router-dom"
       }
 
     return (
-    <div style={{backgroundImage: `url("https://4drendimiento.es/wp-content/uploads/2019/12/imagen-destacada-deportista.png")`}}> 
+    <div className="backgroundItemDetail"> 
     
       <div className="m-5 p-5 font-bold ">
 
@@ -30,7 +30,7 @@ import { Link } from "react-router-dom"
        { 
          !purchase ? 
            <ItemCount stock={item.Stock} initial={0} onAdd={onAdd} />
-         :  <Link to={'/entregaFinalNazer/CartView'} className='btn bg-blue-300 hover:bg-blue-500 hover:text-white border-none text-gray-700 text-base font-[popins]'>Go to cart</Link>
+         :  <Link to={'/entregaFinalNazer/CartView'} className='btn bg-blue-300 hover:bg-sky-700 hover:text-white border-none text-gray-700 text-base font-[popins]'>Go to cart</Link>
          }
          </div>
       </div>

@@ -40,16 +40,16 @@ useEffect(()=>{
   
    
     return (
-       <div className=''>
+       <div className='backgroundItemListContainer'>
         
-          <div className='text-3xl greeting font-[popins] text-gray-600 ' >{greeting}  </div>
+          <div className='text-3xl greeting font-[popins] text-gray-200 ' >{greeting}  </div>
            {
         
             productList.length
             ?
             <ItemList productList={productList}/>  
             :
-             <h1> Loading... <Loader loading={true}  /></h1>       }     
+             <h1 className='text-white text-2xl mx-5 '> Loading... <Loader loading={true}  /></h1>       }     
           
             
           
@@ -62,7 +62,7 @@ useEffect(()=>{
   export default ItemListContainer
 
 
-
+  
 
 
 

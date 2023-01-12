@@ -1,0 +1,17 @@
+/* Imagenes de fondo */
+.backgroundNav{
+    background-image: url("https://static.nike.com/a/images/f_auto,cs_srgb/w_1920,c_limit/4ffc6a2c-d10a-4baa-abb0-59db155cf076/nikelab.jpg");
+    background-size:cover;
+}
+.backgroundItemListContainer{
+    background-image: url("https://digwallpapers.com/wallpapers/full/e/d/2/546-1242x2688-nike-black-background-image-phone-hd.jpg");
+    background-size:cover ;
+}
+
+.backgroundCartView{
+    background-image: url("https://img.freepik.com/premium-vector/abstract-light-silver-background_67845-796.jpg?w=2000");
+}
+
+.backgroundItemDetail{
+    background-image: url("https://cdn.mos.cms.futurecdn.net/bivVjesZWPzxTWBgFB5Qnf-320-80.jpg");
+}

@@ -90,9 +90,9 @@ const [buyer, setBuyer] = useState({})
                 
                 
                 <div className="w-[65%] flex justify-end m-1 gap5" >
-                  <button  type='submit' className="bg-teal-500 hover:bg-teal-700 hover:text-teal-100 text-white font-bold py-2 px-4 rounded-full uppercase font-[popins]">Confirm/buy</button>
+                  <button  type='submit' className="bg-blue-300 hover:bg-sky-700 hover:text-teal-100 text-white font-bold py-2 px-4 rounded-full uppercase font-[popins]">Confirm/buy</button>
                 <Link to='/entregaFinalNazer/'>
-                  <button onClick={() => emptyCart()} className="bg-purple-300 hover:bg-purple-400 border-none hover:text-red-900 font-bold  py-2 px-4 rounded-full uppercase font-[popins]"> Cancel/Back to shop </button>
+                  <button onClick={() => emptyCart()} className="bg-orange-200 hover:bg-orange-300 border-none hover:text-gray-100 font-bold  py-2 px-4 rounded-full uppercase font-[popins]"> Cancel/Back to shop </button>
                   </Link>
                 </div>
 
