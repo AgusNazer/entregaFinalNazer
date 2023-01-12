@@ -19,7 +19,7 @@ const ItemCount = ({stock, onAdd}) => {
          <button 
          onClick={() => setCount(count -1)} disabled={count ===0} className='btn hover:bg-red-400 border-none  boton__disminuir m-1'>-</button>
          <button 
-         onClick={() => onAdd(count)}  className='btn hover:bg-green-400 border-none boton__reset m-1'>Add to cart</button>
+         onClick={() => onAdd(count)}  className='btn hover:bg-green-400 border-none boton__reset m-1 font-[popins]'>Add to cart</button>
          </div>
   )
   

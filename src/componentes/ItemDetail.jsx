@@ -30,7 +30,7 @@ import { Link } from "react-router-dom"
        { 
          !purchase ? 
            <ItemCount stock={item.Stock} initial={0} onAdd={onAdd} />
-         :  <Link to={'/entregaFinalNazer/CartView'} className='btn bg-blue-300 hover:bg-blue-500 hover:text-white border-none '>Go to cart</Link>
+         :  <Link to={'/entregaFinalNazer/CartView'} className='btn bg-blue-300 hover:bg-blue-500 hover:text-white border-none text-gray-700 text-base font-[popins]'>Go to cart</Link>
          }
          </div>
       </div>

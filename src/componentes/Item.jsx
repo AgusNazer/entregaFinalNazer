@@ -13,7 +13,7 @@ const Item = ( {title, stock, id, price,image} ) => {
           </a>
           <div className="p-6">
             <h5 className="text-gray-900 text-xl font-medium mb-2">{title}</h5>
-            <p className="text-gray-700 text-base mb-4">
+            <p className="text-gray-700 text-base font-[popins] mb-4">
               {price}
             </p>
             <Link to={`/entregaFinalNazer/item/${id}`} className="btn border-none bg-blue-300 hover:bg-blue-400 hover:text-black text-white font-bold py-2 px-4">View Details</Link> 

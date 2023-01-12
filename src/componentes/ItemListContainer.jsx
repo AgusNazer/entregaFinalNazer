@@ -42,7 +42,7 @@ useEffect(()=>{
     return (
        <div className=''>
         
-          <div className='text-3xl greeting  text-gray-600 ' >{greeting}  </div>
+          <div className='text-3xl greeting font-[popins] text-gray-600 ' >{greeting}  </div>
            {
         
             productList.length

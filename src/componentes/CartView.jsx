@@ -67,17 +67,17 @@ import { FaTrash } from "react-icons/fa";
     </div>
     
     <div className="w-[60%] flex justify-center m-1 gap5" >
-      <Link to='/entregaFinalNazer/Checkout' className="bg-teal-500 hover:bg-teal-700 hover:text-blue-100 text-white font-bold py-2 px-4 rounded-full uppercase"> Finish buying! </Link>
-      <button onClick={() => emptyCart()} className="bg-purple-300 hover:bg-purple-300 border-none hover:text-red-900 font-bold py-2 px-4 rounded-full uppercase"> Empty cart </button>
+      <Link to='/entregaFinalNazer/Checkout' className="bg-teal-500 hover:bg-teal-700 hover:text-blue-100 text-white font-bold py-2 px-4 rounded-full uppercase font-[popins]"> Finish buying! </Link>
+      <button onClick={() => emptyCart()} className="bg-purple-300 hover:bg-purple-300 border-none hover:text-red-900 font-bold py-2 px-4 rounded-full uppercase font-[popins]"> Empty cart </button>
     </div>
     
     </>
     
     ) : (
        <div className="flex flex-col items-center"> 
-        <h1 className="text-2xl font-medium">The cart is empty!</h1>
+        <h1 className="text-2xl font-medium font-[popins]">The cart is empty!</h1>
         <div className="m-6">
-         <Link to='/entregaFinalNazer/' className=" bg-orange-300 btn hover:bg-orange-400 hover:text-white border-none py-2 px-4 rounded-full uppercase "> Back to shop </Link>
+         <Link to='/entregaFinalNazer/' className=" bg-orange-300 btn hover:bg-orange-400 hover:text-white border-none py-2 px-4 rounded-full uppercase font-[popins]"> Back to shop </Link>
          
             
         </div>    

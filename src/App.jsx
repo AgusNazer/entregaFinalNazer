@@ -1,16 +1,10 @@
-
-
 import { CartContextProvider } from './context/CartContext'
 import './App.css'
 import NavBar from './componentes/NavBar'
-import './componentes/NavBar.css'
 import ItemListContainer from './componentes/ItemListContainer'
 import './componentes/ItemListContainer.css'
 import ItemDetailContainer from './componentes/ItemDetailContainer' 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-
-
 import CartWidget from './componentes/CartWidget'
 import CartView from './componentes/CartView'
 import Checkout from './componentes/Checkout'
