@@ -12,8 +12,8 @@ import { FaTrash } from "react-icons/fa";
 
     return (
  
-
-<div className="flex flex-col m-10 justify-center items-center backgroundCartView ">
+<div className="min-h-auto">
+<div className="flex flex-col m-10 justify-center items-center backgroundCartView min-h-full	 ">
   
  {
    cart.length > 0 ? (
@@ -59,8 +59,8 @@ import { FaTrash } from "react-icons/fa";
 
     }
 
-<div className="w-[60%] flex justify-end m-1" >
-        <div className="w-[42%] flex relative h-[50px] bg-dimwhite font-medium items-center justify-between px-8" >
+<div className="w-[60%] flex justify-end m-1 " >
+        <div className="w-[42%] flex relative h-[50px] bg-dimwhite font-medium items-center justify-between px-8 " >
             <h3 className="uppercase"> Total Cart: </h3>  
             <h3 className="text-rigth"> ${totalPrecioCarrito()} </h3>  
         </div>
@@ -88,6 +88,7 @@ import { FaTrash } from "react-icons/fa";
     )
 
 }
+</div>
 </div>
 
 
