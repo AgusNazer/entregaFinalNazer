@@ -38,7 +38,7 @@ const ItemDetailContainer = () => {
         {
          item
          ?  
-            <ItemDetail  item={item}/>
+            <ItemDetail  item={item} />
             
         :
         

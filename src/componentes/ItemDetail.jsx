@@ -16,17 +16,17 @@ import { Link } from "react-router-dom"
       }
 
     return (
-    <div className="backgroundItemDetail"> 
+    <div className="backgroundItemDetail flex flex-wrap justify-center"> 
     
-      <div className="m-5 p-5 font-bold ">
+      <div className="m-5 p-5 font-bold text-xl  ">
 
-          <div>{item.title}</div>
+          <div className="text-center">{item.title}</div>
           {/* <div>{item.quantity}</div> */}
-          <div>Stock: {item.stock}</div>
-          <div>Price: U$ {item.price}</div>
-          <div>Style: {item.description}</div>
-          <figure className='w-80 mt-10 ml-5'><img src={item.image}  /></figure>
-       <div>
+          <div className="text-center">Stock: {item.stock}</div>
+          <div className="text-center">Price: U$ {item.price}</div>
+          <div className="text-center">Style: {item.description}</div>
+          <figure className='w-80 mt-10 ml-5 mix-blend-multiply'><img src={item.image}  /></figure>
+       <div className="flex flex-wrap justify-center">
        { 
          !purchase ? 
            <ItemCount stock={item.Stock} initial={0} onAdd={onAdd} />

@@ -6,9 +6,9 @@ export const ItemList = ({productList}) => {
 
     
     return (
-      <div>
+      <div className="flex flex-wrap justify-center ">
       
-        <div className="ItemList font-bold text-gray-100 ">
+        <div className="ItemList font-bold text-gray-100 flex flex-wrap justify-center gap-5 mb-5 mt-5 min-h-screen ">
         
             {
               productList.map(item => <Item key={item.id} 

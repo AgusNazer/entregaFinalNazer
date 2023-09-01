@@ -40,7 +40,7 @@ useEffect(()=>{
   
    
     return (
-       <div className='backgroundItemListContainer'>
+       <div className='backgroundItemListContainer min-h-screen'>
         
           <div className='text-3xl greeting font-[popins] text-gray-200 ' >{greeting}  </div>
            {

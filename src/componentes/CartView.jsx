@@ -13,7 +13,7 @@ import { FaTrash } from "react-icons/fa";
     return (
  
 
-<div className="flex flex-col m-10 justify-center items-center backgroundCartView">
+<div className="flex flex-col m-10 justify-center items-center backgroundCartView ">
   
  {
    cart.length > 0 ? (
